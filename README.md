@@ -10,12 +10,17 @@ Final project for Ruby on Rails curriculum of *The Odin Project*.
 
 This are the [instructions for devise setup](https://github.com/heartcombo/devise) Easy as reading it.
 
-I try to make devise work with turbo, but I was unable with [this instructions](https://gorails.com/episodes/devise-hotwire-turbo), they did not work.
+I try to make devise work with turbo, but I was unable with [this instructions](https://gorails.com/episodes/devise-hotwire-turbo), they did not work. And also... it F**** up mi work up to the moment...
 
-Instead I choose to deactivate turbo on the devise views using ` html: {'data-turbo' => "false"} `
-This was the selected option.
+Instead I choose to deactivate turbo on the devise views using ` html: {'data-turbo' => "false"} ` this also did not work... so I made a wrap of the forms with this:
+`<div data-turbo="false">
+</div>`
+
+This was the selected option, and the one that works.
 
 Also I try to add username as a parameter to sign up and sign in. using [this instructions:](https://dev.to/casseylottman/adding-a-field-to-your-sign-up-form-with-devise-10i1)
+
+This also was a succes, later I may try to add the sign in method using the username.
 
 ### 2. Creating user Model with Devise.
 

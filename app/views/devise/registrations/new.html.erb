@@ -1,17 +1,17 @@
 <h2>Sign up</h2>
-
-<%= form_for(html: {'data-turbo' => "false"},resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div data-turbo="false">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
  <div class="field">
     <%= f.label :username %><br />
-    <%= f.text :username, placeholder: 'User12345' %>
+    <%= f.text_field :username, placeholder: 'User12345' %>
   </div>
 
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'example@provider.com' %>
   </div>
 
   <div class="field">
@@ -19,12 +19,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password",placeholder:"*******" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"*******" %>
   </div>
 
   <div class="actions">
@@ -33,3 +33,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
