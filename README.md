@@ -52,6 +52,16 @@ At this point validations of the models are pending.
 GitHub asked for this [personal token and else](https://dev.to/ibmdeveloper/can-t-push-to-your-github-repo-i-can-help-with-that-1fda) to be able to push my commits, it took me an hour to find how to do it... If everything goes smoothly, that is beacuse your problems are yet to come.
 
 
+## 7. Frienship_requests & friendships. 
+I had to read all of this to decide how to do it: 
+- [elizabeth pendergast](https://medium.com/@elizabethprendergast/using-custom-relation-queries-to-establish-friends-and-friendships-in-rails-and-activerecord-6c6e5825433a)
+
+- [dankim.io instructions](https://dankim.io/mutual-friendship-rails) 
+- [Customizing queries on active Record](https://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#module-ActiveRecord%3a%3aAssociations%3a%3aClassMethods-label-Customizing+the+query) This one is pretty good.
+- [Self Referential Associations](https://riptutorial.com/ruby-on-rails/example/10240/self-referential-association) This one too.
+
+On the end my 85% is from dankim.io and I took some other ideas from elizabeth. Awesome what you can do with rails if you put the effort on it. But as I am just a novice, sometimes reading code is the best practice to learn how deep can you go and how flexible can it be.
+
 
 
 
