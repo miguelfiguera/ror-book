@@ -76,8 +76,12 @@ Good enough for my to try it, because it was really simple and thats what I like
 
 The only thing that I did update was my README. Im not going to loose all this nonsense that I wrote.
 
+Also, this is getting pushed to another branch called 
+    `friendships_simple`
+That way Im not loosing anything that I would like to save.
+
 ## 7.5 Creating a table for the likes...
-    This was not on the plan, but to avoid an user duplicating his likes, this is the way. Even if this makes me write more code.
+This was not on the plan, but to avoid an user duplicating his likes, this is the way. Even if this makes me write more code.
 
 ## 8. Building now the views
 
