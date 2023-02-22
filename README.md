@@ -76,8 +76,19 @@ Good enough for my to try it, because it was really simple and thats what I like
 
 The only thing that I did update was my README. Im not going to loose all this nonsense that I wrote.
 
+## 7.5 Creating a table for the likes...
+    This was not on the plan, but to avoid an user duplicating his likes, this is the way. Even if this makes me write more code.
+
+## 8. Building now the views
+
+Im going to use turbo frames for this. I want to make an hybrid with this ror book, even if I havent done the deployment.
+
+So, this is the link: [turbo.frames tutorial](https://www.hotrails.dev/turbo-rails/turbo-frames-and-turbo-streams) it also have the turbostreams part.
+
+Also, this goes with the construction of the controllers, cause the views work with the controllers. So the idea is to go together with them, at least parallel writing.
 
 
+## 9. Installing Bootstrap/Bulma
 
 ---
 P.D: I do love markdown to write any kind of text.
