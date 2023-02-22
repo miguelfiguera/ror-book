@@ -51,6 +51,11 @@ At this point validations of the models are pending.
 
 GitHub asked for this [personal token and else](https://dev.to/ibmdeveloper/can-t-push-to-your-github-repo-i-can-help-with-that-1fda) to be able to push my commits, it took me an hour to find how to do it... If everything goes smoothly, that is beacuse your problems are yet to come.
 
+## 6.5 Validations and controllers
+I also made the first validations and the first draft of this controllers, of course, I did also add the routes.
+
+But later I kill the controllers.
+
 
 ## 7. Frienship_requests & friendships. 
 I had to read all of this to decide how to do it: 
@@ -63,7 +68,13 @@ I had to read all of this to decide how to do it:
 On the end my 85% is from dankim.io and I took some other ideas from elizabeth. Awesome what you can do with rails if you put the effort on it. But as I am just a novice, sometimes reading code is the best practice to learn how deep can you go and how flexible can it be.
 
 
+## 7.1 Update about friendships:
 
+I did some more of google researchs for this matter because I find it alot more difficult than what it should be... to much code for the same functionality. So I learned about `status:` as a way to put the created frienship in a pending & requested status. I got this from this [reddit post](https://www.reddit.com/r/rails/comments/im32av/is_this_the_simplest_way_to_create_a/).
+
+Good enough for my to try it, because it was really simple and thats what I like about it. So reset my commits to the place before the friendship part done, and keep the pushed one on github in case I screw things up. So just a fetch and everything was just fine.
+
+The only thing that I did update was my README. Im not going to loose all this nonsense that I wrote.
 
 
 
