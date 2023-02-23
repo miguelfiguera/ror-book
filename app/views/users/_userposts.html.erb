@@ -1,0 +1,15 @@
+
+
+<div>
+<%@user.eager_load(:posts).each do |post|%>
+
+<div>
+<p><%=post.user.username%></p>
+<p><%=post.title%></p> <br>
+<p><%=post.body%></p>
+<div><button><%=post.likes%></button></div>
+</div>
+
+<%end%>
+
+</div>
