@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     def update
         @comment=Comment.find(params[:id])
 
-        if @comment.update
+        if @comment.update(comments_params)
             flash[:notice]='Comment updated'
             #turbostream stuff
         else

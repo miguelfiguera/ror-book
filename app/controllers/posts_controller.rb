@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   def update
     @post=current_user.build.posts(posts_params)
 
-    if @post.update 
+    if @post.update(post_params)
      #here it goes the turbo stream part
       flash[:notice]='Post Updated'
     else 
