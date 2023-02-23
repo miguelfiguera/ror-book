@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post=Post.find(params[:id])
+    @comments=@post.eager_load(:comments)
   end
 
   def new

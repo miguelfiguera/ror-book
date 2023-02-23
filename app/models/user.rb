@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_one :profile
   has_many :friendships
   has_many :friends, through: :friendships
+  has_many :likes
 
 
 
