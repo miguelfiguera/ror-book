@@ -6,7 +6,7 @@
 <%end%>
 <button><%= link_to 'show_friends', data:{turbo_frame: 'show_friends'}%></button>
 <button><%= link_to 'Notifications', data:{turbo_frame: 'notifications'}%></button>
-<button><%= link_to 'Write on Your wall!', data:{turbo_frame: 'create_post'}%></button>
+<button><%= link_to 'Write on Your wall!', new_post_path, data:{turbo_frame: 'create_post'}%></button>
 <button><%= link_to 'Messages', data:{turbo_frame: 'messages'}%></button>
 
 

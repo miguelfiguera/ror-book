@@ -1,0 +1,8 @@
+<%=form_with model: @post do |f|%>
+<%=f.label :title, "title"%> <br>
+<%=f.text_field :title%><br>
+<%=f.label :body, 'Write your post here:'%><br>
+<%=f.text_field :body%><br>
+<%=f.hidden_field :user_id, value: current_user.id%><br>
+<%=f.submit 'Save Post!'%>
+<%end%>

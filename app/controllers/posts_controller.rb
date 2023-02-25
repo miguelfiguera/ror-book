@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post=current_user.build.posts(posts_params)
+    @post=Post.new(posts_params)
 
     if @post.save 
       #here it goes the turbo stream part
