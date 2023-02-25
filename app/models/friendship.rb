@@ -1,6 +1,6 @@
 class Friendship < ApplicationRecord
   belongs_to :user
-  belongs_to :receiver, class_name: 'User', foreign_key: 'friend_id'
+  belongs_to :friend, class_name: 'User', foreign_key: 'friend_id'
 
   #scope :friends ->{where("status = 'accepted'")}
   #scope :strangers ->{where("status='not_accepted' AND status!='pending'")}

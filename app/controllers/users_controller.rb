@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
     def index
         @friends = User.friends.all
+        @posts=current_user.includes(:posts)
         @not_friends=User.eager_load(:friendships).where("status!= 'pending' AND status!= 'accepted'")
     end
 

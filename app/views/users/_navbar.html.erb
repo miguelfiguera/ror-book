@@ -1,20 +1,5 @@
-<div> <h3><%=link_to 'RorBook',root_path%></h3>
-<button><%= link_to 'Show Profile', data:{turbo_frame: 'show_profile'}%></button>
-<button><%= link_to 'show_friends', data:{turbo_frame: 'show_friends'}%></button>
-<button><%= link_to 'Notifications', data:{turbo_frame: 'notifications'}%></button>
-<button><%= link_to 'Messages', data:{turbo_frame: 'messages'}%></button>
-
-
+<div>
+<button class="time-line"><%=link_to 'RorBook-timeLine', root_path%></button>
+<button class="user-search"><%=link_to 'Users Index', users_path%></button>
+<button class="user_profile"><%=link_to 'User Profile', user_path(current_user)%></button>
 </div>
-
-<%= turbo_frame_tag 'show_profile' do %>
-<%end%>
-
-<%= turbo_frame_tag 'show_friends' do %>
-<%end%>
-
-<%= turbo_frame_tag 'notifications' do %>
-<%end%>
-
-<%= turbo_frame_tag 'messages' do %>
-<%end%>

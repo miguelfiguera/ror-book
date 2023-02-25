@@ -1,7 +1,11 @@
-<h1><%=@user.profile.fullname%> Profile.</h1>
-
 <%= render 'navbar'%>
+
+<h1><%=@user.username%> Profile.</h1>
+
+
+
+<%= render 'profiletools'%>
 
 <h3>User wall:</h3>
 
-<%=render 'userposts%>
+<%=render 'userposts'%>
