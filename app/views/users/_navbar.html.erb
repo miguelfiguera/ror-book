@@ -1,8 +1,20 @@
-<div>Nav bar
-<button>Show Profile</button>
-<button>Show friends</button>
-<button>Notifications</button>
+<div> <h3><%=link_to 'RorBook',root_path%></h3>
+<button><%= link_to 'Show Profile', data:{turbo_frame: 'show_profile'}%></button>
+<button><%= link_to 'show_friends', data:{turbo_frame: 'show_friends'}%></button>
+<button><%= link_to 'Notifications', data:{turbo_frame: 'notifications'}%></button>
+<button><%= link_to 'Messages', data:{turbo_frame: 'messages'}%></button>
+
+
 </div>
 
-All of this must be done to use data turbo and put the
-requested data where it belongs.
+<%= turbo_frame_tag 'show_profile' do %>
+<%end%>
+
+<%= turbo_frame_tag 'show_friends' do %>
+<%end%>
+
+<%= turbo_frame_tag 'notifications' do %>
+<%end%>
+
+<%= turbo_frame_tag 'messages' do %>
+<%end%>

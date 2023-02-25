@@ -36,6 +36,10 @@ This was created to save the demographics of each user, an user only has a profi
 
 ## 4. Post model.
 
+`rails generate model Post user:references title:string body:text`
+
+Thats all, everything else can be checked in the code.
+
 ## 5. comments as polymorphic
 
 I made the comments polymorphic to use them in pictures also.
@@ -79,6 +83,9 @@ The only thing that I did update was my README. Im not going to loose all this n
 Also, this is getting pushed to another branch called 
     `friendships_simple`
 That way Im not loosing anything that I would like to save.
+
+
+The main idea of this is just to create the friendship with a 'pending' status, a method on the model that update the status to accepted with a button or to destroy it with another button. To be shown on the notifications button of the nav bar.
 
 ## 7.5 Creating a table for the likes...
 This was not on the plan, but to avoid an user duplicating his likes, this is the way. Even if this makes me write more code.
