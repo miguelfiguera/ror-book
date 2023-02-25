@@ -1,0 +1,16 @@
+
+<%@profile=current_user.profile%>
+<%unless @profile.nil?%>
+<div>
+<img src=<%=@profile.profile_picture_link%> alt=<%=@profile.full_name%>>
+
+<h4><%=@profile.full_name%>'s Profile</h4>
+
+<li><h5><%=@profile.city%></h5></li> <br>
+<li><h5><%=@profile.age%></h5></li> <br>
+<li><h5><%=@profile.school%></h5></li> <br>
+<li><h5><%=@profile.favorite_dessert%></h5></li> <br>
+</div>
+
+<%end%>
+

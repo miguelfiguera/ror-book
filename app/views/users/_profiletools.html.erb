@@ -1,17 +1,21 @@
 
 <%if current_user.profile.nil?%>
-<button><%= link_to 'Create Profile', data:{turbo_frame: 'create_profile'}%></button>
+<button><%= link_to 'Create Profile',new_profile_path, data:{turbo_frame: 'create_profile'}%></button>
 <%else%>
-<button><%= link_to 'Show Profile', data:{turbo_frame: 'show_profile'}%></button>
+<button><%= link_to 'Show Profile',profile_path, data:{turbo_frame: 'show_profile'}%></button>
 <%end%>
 <button><%= link_to 'show_friends', data:{turbo_frame: 'show_friends'}%></button>
 <button><%= link_to 'Notifications', data:{turbo_frame: 'notifications'}%></button>
+<button><%= link_to 'Write on Your wall!', data:{turbo_frame: 'create_post'}%></button>
 <button><%= link_to 'Messages', data:{turbo_frame: 'messages'}%></button>
 
 
 </div>
 
 <%= turbo_frame_tag 'create_profile' do %>
+<%end%>
+
+<%= turbo_frame_tag 'create_post' do %>
 <%end%>
 
 <%= turbo_frame_tag 'show_profile' do %>

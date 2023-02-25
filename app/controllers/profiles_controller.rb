@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
         @profile=Profile.new(profile_params)
 
         if @profile.save
-            #awesome stuff
+            redirect_to profile_path(@profile)
         else
             flash[:alert]='Profile not saved. Try again.'
             render new
@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
     end
 
     def show
-        @profile=Profile.find(profile_params[:id])
+        @profile=Profile.find(params[:id])
     end
 
     def edit
