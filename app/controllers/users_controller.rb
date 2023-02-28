@@ -12,8 +12,9 @@ class UsersController < ApplicationController
         # All the posibilities? To index users that I think I need
         @users=User.all_the_others(current_user)
         @users_ids=User.all_the_others(current_user).pluck(:id)
+        #@pending=Friendship.where(user_id: current_user.id).or(where(friend_id:current_user.id)).and(status:'pending')
         @friends=current_user.friends == nil ? @friends=[] : @friends=current_user.friends
-        @not_friends= @users_id - @friends unless @users_id.nil? || @friends.nil?
+        @not_friends= @users_id - @friends - @pending unless @users_id.nil? || @friends.nil?||@pending
 
         # Creating a Friendship Request
 

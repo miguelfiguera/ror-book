@@ -2,7 +2,7 @@ class FriendshipsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @pending=current_user.friendships.where(friend:current_user.id)
+        @pending=Friendship.pending(current_user)
     end
 
    def new
@@ -19,8 +19,7 @@ class FriendshipsController < ApplicationController
         flash[:alert]='Friendship Request NOT created.'
         render new
     end 
-
-    end
+   end
 
     def destroy
         @friendship=Friendship.find(params[:id])
@@ -32,7 +31,7 @@ class FriendshipsController < ApplicationController
 
    private
    def friendship_params
-    params.require(:friendship).permit(:user_id,:friend,:status)
+    params.require(:friendship).permit(:user_id,:friend_id,:status)
    end
 
 

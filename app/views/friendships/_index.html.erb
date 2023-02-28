@@ -1,0 +1,10 @@
+<%unless @pending.empty?%>
+<%@pending.each do |fp|%>
+<h3><strong>Friend request by:</strong></h3>
+<%@user=User.find(fp.user_id)%>
+<%=@user.username%>
+<%=@user.profile.full_name%>
+<%button_to 'Accept', action:fp.accept!%>
+<%#button_to 'Reject', action: 'destroy'%>
+<%end%>
+<%end%>

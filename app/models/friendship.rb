@@ -5,10 +5,10 @@ class Friendship < ApplicationRecord
 
   attribute :status, :string, default: 'pending'
 
+  scope :pending, ->(user){where("friend_id = ? AND status = 'pending'", user.id)}
 
-
-  def accept!(friend_id)
-    update(status: 'accepted')
+  def accept!
+    update_attribute(status: 'accepted')
   end
 
 end

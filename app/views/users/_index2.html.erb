@@ -6,7 +6,7 @@
     <p><%=x.profile.full_name%></p>
     <p><%=x.profile.city%></p>
     <p><%=x.profile.favorite_dessert%></p>
-    <div><button>Send Friend Request</button></div>
+    <%=render 'friendrequest', x: x%>
 </div>
 <%end%>
 <%end%>
