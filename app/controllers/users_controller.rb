@@ -3,12 +3,11 @@ class UsersController < ApplicationController
 
     def show
         @user=User.find(params[:id])
+        @comment=current_user.comments.create
+        @posts=current_user.posts.includes(:comments)
     end
 
     def index
-        @friends = User.friends.all
-        @posts=current_user.includes(:posts)
-        @not_friends=User.eager_load(:friendships).where("status!= 'pending' AND status!= 'accepted'")
     end
 
 

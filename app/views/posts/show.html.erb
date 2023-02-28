@@ -1,3 +1,6 @@
+<%= render 'users/navbar'%>
+
+
 
 <%=render 'show_post'%>
 
@@ -5,7 +8,7 @@
 <%=render 'comments/form', post: @post%>
 
 <%if !@comments.empty?%>
-<%=render 'comments/indexs', comments: @comments%>
+<%render 'comments/indexs', comments: @comments%>
 <%else%>
 <%='No comments...yet...'%>
 <%end%>

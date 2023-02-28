@@ -1,7 +1,11 @@
 <h4>Comments:</h4>
 <%unless comments.nil?%>
-<%=comments.each do |c|%>
-<%=User.find(c.user_id).username%>
-<%=c.body%>
+<div>
+<%comments.each do |c|%>
+<%num=c.user_id.to_i%> 
+<%=User.find(num).username if num>0%><br>
+<%=c.body%> <br>
 <%end%>
+</div>
 <%end%>
+

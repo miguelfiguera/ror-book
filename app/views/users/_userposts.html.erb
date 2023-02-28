@@ -1,4 +1,3 @@
-<%@posts=current_user.posts%>
 <div>
 <%unless @posts.nil?%>
 <%@posts.each do |post|%>
@@ -10,12 +9,16 @@
 <p><%=post.body%></p>
 <div><button><%='Likes!'%></button></div>
 <button><%=link_to "edit post", edit_post_path, data:{turbo_frame:'edit_post'}%></button>
+</div>
+<div>create a comment:
+
+<%=render 'comments/form', post: post%>
+
 
 </div>
+<%@comments = post.comments%>
+<%= render 'comments/indexs', comments: @comments%>
 
 
 <%end%>
 <%end%>
-
-
-</div>

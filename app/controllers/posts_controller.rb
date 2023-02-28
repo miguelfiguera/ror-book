@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def show
     @post=Post.find(params[:id])
     @comment=@post.comments.create #this lets me create a comment from PostShow
-    @comments=Post.post_comments(@post)
+    @comments=@post.comments
   end
 
   def new
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   def update
     @post=Post.find(params[:id])
 
-    if @post.update(post_params)
+    if @post.update(posts_params)
      #here it goes the turbo stream part
       flash[:notice]='Post Updated'
     else 
