@@ -3,15 +3,18 @@ class CommentsController < ApplicationController
 
     def index
         @post=Post.find(params[:id])
-        @comments=post_comments(@post)
+        @comments=post_comments(@post).limit(50)
     end
 
 
+    def new
+        @comment=Comment.new
+    end
+
     def create
-        @post=Post.find(params[:id])
-        @comment=@post.comments.create(comments_params)
+        @comment=Comment.new(comments_params)
         if @comment.save
-            #turbo streamstuffs
+               #turbo streamstuffs
         else
             flash.alert='Comment Not Saved'
             render new

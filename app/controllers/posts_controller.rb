@@ -9,8 +9,8 @@ class PostsController < ApplicationController
 
   def show
     @post=Post.find(params[:id])
+    @comment=@post.comments.create #this lets me create a comment from PostShow
     @comments=Post.post_comments(@post)
-    @new_comment=@post.comments.create
   end
 
   def new

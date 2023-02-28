@@ -1,4 +1,4 @@
-<%=form_with model: @new_comment do |c|%>
+<%=form_with model: @comment, locals: true do |c|%>
 <%=c.hidden_field :commentable_type, value: post.class%>
 <%=c.hidden_field :commentable_id, value: post.id%>
 <%=c.hidden_field :user_id, value: current_user.id%>
