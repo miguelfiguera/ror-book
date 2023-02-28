@@ -1,0 +1,7 @@
+<h4>Comments:</h4>
+<%unless comments.nil?%>
+<%=comments.each do |c|%>
+<%=User.where(id:c.user_id)%>
+<%=c.body%>
+<%end%>
+<%end%>

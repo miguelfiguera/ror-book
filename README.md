@@ -99,7 +99,13 @@ So, this is the link: [turbo.frames tutorial](https://www.hotrails.dev/turbo-rai
 Also, this goes with the construction of the controllers, cause the views work with the controllers. So the idea is to go together with them, at least parallel writing.
 
 
-## 9. Installing Bootstrap/Bulma
+## 9. Arranging Scopes and debugging comments
+
+Scopes (kind of method class) help to keep the code DRY and organized. Thats all.
+
+Comments its giving me a hardtime I do not know why yet, maybe Im just proceeding the wrong way.
+
+##  Installing Bootstrap/Bulma
 
 ---
 P.D: I do love markdown to write any kind of text.

@@ -2,11 +2,15 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @owned=Post.current_user_posts(current_user)
+    #@friends=Post.friends_posts(current_user)
   
   end
 
   def show
     @post=Post.find(params[:id])
+    @comments=Post.post_comments(@post)
+    @new_comment=@post.comments.create
   end
 
   def new
@@ -31,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post=current_user.build.posts(posts_params)
+    @post=Post.find(params[:id])
 
     if @post.update(post_params)
      #here it goes the turbo stream part

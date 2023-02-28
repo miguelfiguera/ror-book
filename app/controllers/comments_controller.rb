@@ -3,9 +3,8 @@ class CommentsController < ApplicationController
 
     def index
         @post=Post.find(params[:id])
-        @comments=Comment.where(commentable_type: @post.class).where(commentable_id: @post.id)
+        @comments=post_comments(@post)
     end
-
 
 
     def create

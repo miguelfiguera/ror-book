@@ -4,5 +4,7 @@ class Comment < ApplicationRecord
 
   validates :body, presence: true
   validates :user_id, presence:true
+
+  scope :post_comments, ->(post){where("commentable_id = ? AND commentable_type = ? ",post.id,post.class)}
     
 end
