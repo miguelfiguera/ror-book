@@ -1,7 +1,7 @@
 # ROR-BOOK
 
 Final project for Ruby on Rails curriculum of *The Odin Project*.
-[check it here](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
+[check it here](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project) Check it if you want to see what I have to do and the criteria for this to work.
 
 
 ## Steps, Bugs & Problems...

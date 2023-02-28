@@ -10,10 +10,9 @@ class FriendshipsController < ApplicationController
    end
 
    def create
-    @friendship=current_user.friendships.build(friendship_params)
+    @friendship=Friendship.new(friendship_params)
     
     if @friendship.save
-        #awesomestuff
         flash[:notice]='Friendship Request pending.'
 
     else

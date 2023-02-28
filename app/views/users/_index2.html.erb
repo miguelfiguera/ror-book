@@ -1,5 +1,5 @@
-<%unless not_friends.nil?%>
-<%not_friends.each do |x|%>
+<%unless @users.nil? %>
+<%@users.each do |x|%>
 <div>
     
     <div class="picture"> <img src=<%=x.profile.profile_picture_link %> alt=<%="profile picture of #{x.profile.full_name}"%>></div>

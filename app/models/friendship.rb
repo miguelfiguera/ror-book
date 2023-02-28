@@ -2,9 +2,6 @@ class Friendship < ApplicationRecord
   belongs_to :user
   belongs_to :friend, class_name: 'User', foreign_key: 'friend_id'
 
-  #scope :friends ->{where("status = 'accepted'")}
-  #scope :strangers ->{where("status='not_accepted' AND status!='pending'")}
-  #scope :requested ->{where("status='pending'")}
 
   attribute :status, :string, default: 'pending'
 
