@@ -4,25 +4,26 @@ class UsersController < ApplicationController
     def show
         @user=User.find(params[:id])
         @comment=current_user.comments.create
-        @posts=current_user.posts.includes(:comments)
-        
+        @posts=@user.posts.includes(:comments)
+        @pending=Friendship.pending(@user)
     end
 
     def index
         # All the posibilities? To index users that I think I need
         @users=User.all_the_others(current_user)
         @users_ids=User.all_the_others(current_user).pluck(:id)
-        #@pending=Friendship.where(user_id: current_user.id).or(where(friend_id:current_user.id)).and(status:'pending')
         @friends=current_user.friends == nil ? @friends=[] : @friends=current_user.friends
         @not_friends= @users_id - @friends - @pending unless @users_id.nil? || @friends.nil?||@pending
 
         # Creating a Friendship Request
 
         @friendship=current_user.friendships.build
-
-
     end
 
+    def friends
+        @user=User.find(params[:user_id])
+        @my_friends=Friendship.my_friends(@user)
+    end
 
 
     private

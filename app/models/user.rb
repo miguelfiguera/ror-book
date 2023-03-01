@@ -8,7 +8,6 @@ class User < ApplicationRecord
 
 
   scope :all_the_others, ->(user){where("id != ?",user.id)}
-  #scope :not_friends, ->(user){where("id NOT IN ?",user.friends)}
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

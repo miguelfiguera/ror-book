@@ -16,7 +16,8 @@ class ProfilesController < ApplicationController
     end
 
     def show
-        @profile=Profile.find(params[:id])
+        @user=User.find(params[:id])
+        @profile=@user.profile
     end
 
     def edit

@@ -21,12 +21,28 @@ class FriendshipsController < ApplicationController
     end 
    end
 
+   def edit
+    @friendship=Friendship.find(params[:id])
+   end
+
+   def update
+    @friendship=Friendship.find(params[:id])
+    if @friendship.update(friendship_params)
+        #awesome rails
+    else
+        render edit
+    end
+    end
+
     def destroy
         @friendship=Friendship.find(params[:id])
         @friendship.destroy
     end
 
-
+    def accept!
+        @friendship=Friendship.find(params[:id])
+        @friendship.accept!
+    end
 
 
    private

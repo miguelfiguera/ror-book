@@ -105,6 +105,11 @@ Scopes (kind of method class) help to keep the code DRY and organized. Thats all
 
 Comments its giving me a hardtime I do not know why yet, maybe Im just proceeding the wrong way.
 
+Yes, I was not building them as I should do with the associations methods.
+
+## 10. Friendships bugs...
+The way that I did the 'show friends', and profiles and comments and all of that makes a big mess... because it shows current_user and not the user that should be shown... debugging that now.
+
 ##  Installing Bootstrap/Bulma
 
 ---

@@ -1,6 +1,5 @@
 
 
-<%@profile=current_user.profile%>
 <%unless @profile.nil?%>
 <div>
 <img src=<%=@profile.profile_picture_link%> alt=<%=@profile.full_name%>>

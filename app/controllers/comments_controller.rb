@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
         @post=Post.find(params[:id])
         @comments=post_comments(@post).limit(50)
     end
-
+    
 
     def new
         @comment=Comment.new

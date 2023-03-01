@@ -1,0 +1,8 @@
+
+<%@my_friends.each do |myf|%>
+<%myf.user_id==current_user.id ? mf=User.find(myf.friend_id) : mf=User.find(myf.user_id) %>
+<img src=<%=mf.profile.profile_picture_link%> alt="">
+<h3></h3><%=link_to "#{mf.profile.full_name}'s Profile"%><h3>
+<p>Favorite dessert: <%= mf.profile.favorite_dessert%></p>
+<p>Age: <%=mf.profile.age%></p>
+<%end%>
