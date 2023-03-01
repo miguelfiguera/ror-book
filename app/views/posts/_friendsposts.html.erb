@@ -1,0 +1,10 @@
+<%@mapped_posts.each do |mp|%>
+<div>
+<p>tutle: </p><%=mp.title%>
+<p> Author: </p><strong><%=User.find(mp.user_id).profile.full_name%></strong> <br>
+<%=mp.body%> <br>
+<p>Write a comment:</p><%=render 'comments/form', post: mp%> <br>
+<%@comments = mp.comments%> <br>
+<%= render 'comments/indexs', comments: @comments%> <br>
+</div>
+<%end%>

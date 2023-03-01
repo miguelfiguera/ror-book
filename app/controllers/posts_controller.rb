@@ -3,8 +3,8 @@ class PostsController < ApplicationController
 
   def index
     @owned=Post.current_user_posts(current_user)
-    #@friends=Post.friends_posts(current_user)
-  
+    @mapped=Friendship.my_friends(current_user).map{|x| x.user_id==current_user.id ? x.friend_id : x.user_id}
+    @mapped_posts= Post.where("user_id IN (?)",@mapped)
   end
 
   def show
