@@ -7,7 +7,11 @@
     <p><%=x.profile.city%></p>
     <p><%=x.profile.favorite_dessert%></p>
         <button><%=link_to "#{x.profile.full_name}'s profile", x%></button>
+       <%if !@mapped.include?(x.id)%>
     <%=render 'friendrequest', x: x%>
+    <%else%>
+    <h4><%='you are friends already'%></h4>
+    <%end%>
 </div>
 <%end%>
 <%end%>

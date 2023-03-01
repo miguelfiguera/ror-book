@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:show] do
     get 'friends'
   end
+  
   resources :posts, :comments, :profiles
   resources :friendships
 end

@@ -1,3 +1,5 @@
+<h4><%='There are no pending requests' if @pending.empty?%></h4>
+
 <%unless @pending.empty?%>
 <%@pending.each do |fp|%>
 <h3><strong>Friend request by:</strong></h3>
