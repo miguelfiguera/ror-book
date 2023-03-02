@@ -110,6 +110,25 @@ Yes, I was not building them as I should do with the associations methods.
 ## 10. Friendships bugs...
 The way that I did the 'show friends', and profiles and comments and all of that makes a big mess... because it shows current_user and not the user that should be shown... debugging that now.
 
+I did it with the same users#show, that way I find the posts directly on that controller.
+
+Also for posts#index I did a concatenation of two arrays with different scopes so I may be able to put them all together (mine and other peoples posts).
+
+## 11. Omniauth
+
+This was truly straight forward just some problems with the configuration on google. It takes time for the adjust to be valid, so if you have a bug, it may be that the platform of google is not working.
+
+After installing omniauth gem for google, I had to add the csrf secutiry gem of omniauth too. And later this snipped of code to devise.rb:
+___
+
+`OmniAuth.config.logger = Rails.logger if Rails.env.development?`
+___
+I find a 401 invalid_client and it was that my `ENV["GOOGLE_CLIENT_ID"]` was not passing because it did not have the correct sintaxis on initializers/devise.rb (double quotes needed).
+
+Later I had to put on google the autorized redirect url, the /onmiauth/callback or something like that.
+
+when I was going to give up for the day, it just worked... so Im happy now.
+
 ##  Installing Bootstrap/Bulma
 
 ---
