@@ -127,6 +127,23 @@ I find a 401 invalid_client and it was that my `ENV["GOOGLE_CLIENT_ID"]` was not
 
 Later I had to put on google the autorized redirect url, the /onmiauth/callback or something like that.
 
+There is a method defined on the model. Remember this, future self.
+___
+         def self.from_omniauth(access_token)
+          data = access_token.info
+          user = User.where(email: data['email']).first
+      
+          # Uncomment the section below if you want users to be created if they don't exist
+           unless user
+               user = User.create(name: data['name'],
+                  email: data['email'],
+                  password: Devise.friendly_token[0,20]
+               )
+           end
+          user
+      end
+___
+
 when I was going to give up for the day, it just worked... so Im happy now.
 
 ##  Installing Bootstrap/Bulma
