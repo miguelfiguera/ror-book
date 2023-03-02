@@ -146,6 +146,25 @@ ___
 
 when I was going to give up for the day, it just worked... so Im happy now.
 
+## 12. Mailers
+
+Sending a email after the sing up is possible while using devise. The problem is that devise creates the user for you, and you do not have access to those controllers, you can ask for those and all of that... but also without touching devise controllers you can do this:
+
+1. Create the user_mailer.rb (rails generate mailer User).
+2. define default and the method on user_mailer.
+3. As application controller rules everything... create the method that send the UserMailer#welcome_email
+___
+        def send_welcome_email
+
+        UserMailer.with(user: @user).welcome_mail.deliver_now
+        
+        end
+___
+4. add the next sniped to devise `"users/registrations_controller.rb"`:
+___
+        after_action :send_welcome_email, if: -> {@user.persisted?}
+___
+
 ##  Installing Bootstrap/Bulma
 
 ---

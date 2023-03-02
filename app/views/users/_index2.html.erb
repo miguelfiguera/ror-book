@@ -1,7 +1,7 @@
-<%unless @users.nil? %>
-<%@users.each do |x|%>
-<div>
-    
+<%unless users.nil? %>
+<%users.each do |x|%>
+<div>    
+    <%if !x.profile.nil?%>
     <div class="picture"> <img src=<%=x.profile.profile_picture_link %> alt=<%="profile picture of #{x.profile.full_name}"%>></div>
     <p><%=x.profile.full_name%></p>
     <p><%=x.profile.city%></p>
@@ -12,6 +12,12 @@
     <%else%>
     <h4><%='you are friends already'%></h4>
     <%end%>
+    <%else%>
+    <h3><strong><%='User without profile info:'%></strong></h3>
+    <%=x.username%>
+    <%=x.email%>
+        <%end%>
+
 </div>
 <%end%>
 <%end%>

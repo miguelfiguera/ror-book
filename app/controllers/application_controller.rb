@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
 
 
     def send_welcome_email
-        UserMailer.with(user: @user).welcome_email.deliver_now
+        UserMailer.with(user: @user).welcome_mail.deliver_now
     end
 end
