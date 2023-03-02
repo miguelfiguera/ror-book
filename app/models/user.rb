@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :friends,->{where("status = 'accepted'")}, through: :friendships, source: :friend
   has_many :likes
+  has_many :rooms
+  has_many :messages
 
 
   scope :all_the_others, ->(user){where("id != ?",user.id)}
