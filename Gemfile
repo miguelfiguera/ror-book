@@ -2,6 +2,19 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
+# figaro
+
+gem 'figaro'
+
+
+#other omniauth part csrf protection
+
+gem 'omniauth-rails_csrf_protection'
+
+#google omniauth2
+
+gem 'omniauth-google-oauth2'
+
 
 #Devise
 

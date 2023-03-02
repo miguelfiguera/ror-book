@@ -8,9 +8,11 @@ class User < ApplicationRecord
 
 
   scope :all_the_others, ->(user){where("id != ?",user.id)}
+  
+  devise :omniauthable, omniauth_providers: [:google_oauth2]
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # :confirmable, :lockable, :timeoutable, :trackable and 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

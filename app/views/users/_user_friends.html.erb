@@ -5,4 +5,6 @@
 <h3></h3><%=link_to "#{mf.profile.full_name}'s Profile"%><h3>
 <p>Favorite dessert: <%= mf.profile.favorite_dessert%></p>
 <p>Age: <%=mf.profile.age%></p>
+
 <%end%>
+<button><%= link_to 'show_friends', user_friends_url(@user.id), data:{turbo_frame: 'show_friends'}%></button>
