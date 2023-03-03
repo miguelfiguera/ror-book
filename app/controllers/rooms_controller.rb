@@ -7,7 +7,6 @@ class RoomsController < ApplicationController
         @room = Room.find(params[:id])
         @messages=@room.messages
         @message=@room.messages.create
-        @receiver= current_user.id==@room.user_id ? @room.receiver_id : @room.user_id
     end
 
     def new

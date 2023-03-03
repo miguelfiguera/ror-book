@@ -165,6 +165,16 @@ ___
         after_action :send_welcome_email, if: -> {@user.persisted?}
 ___
 
+## 13. I created a messages page.
+
+I did not wanted to do the likes, just because its tedious. So I did a nice messages kind of part for this ror book.
+
+It has two parts: Rooms (to put the conversations in) and messages. A room can have many messages from the users inside, right now there are for two people only and you cannot invite anyone else. Later that will improve.
+
+I had the option of using mailboxer but I wanted to try and add the turbo_stream part for this idea.
+
+Also I put the navbar in the layout and create another layout for devise controllers.
+
 ##  Installing Bootstrap/Bulma
 
 ---
