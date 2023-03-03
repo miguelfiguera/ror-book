@@ -17,7 +17,7 @@ before_action :set_room, only: %i[ new create ]
 
         respond_to do |format|
             if @message.save
-            format.turbo_stream
+            #format.turbo_stream this does not work yet...
             format.html{redirect_to @room} 
             end
         end
