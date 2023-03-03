@@ -78,8 +78,6 @@ I did some more of google researchs for this matter because I find it alot more 
 
 Good enough for my to try it, because it was really simple and thats what I like about it. So reset my commits to the place before the friendship part done, and keep the pushed one on github in case I screw things up. So just a fetch and everything was just fine.
 
-The only thing that I did update was my README. Im not going to loose all this nonsense that I wrote.
-
 Also, this is getting pushed to another branch called 
     `friendships_simple`
 That way Im not loosing anything that I would like to save.
@@ -170,6 +168,7 @@ ___
 I did not wanted to do the likes, just because its tedious. So I did a nice messages kind of part for this ror book.
 
 It has two parts: Rooms (to put the conversations in) and messages. A room can have many messages from the users inside, right now there are for two people only and you cannot invite anyone else. Later that will improve.
+=======
 
 I had the option of using mailboxer but I wanted to try and add the turbo_stream part for this idea.
 
