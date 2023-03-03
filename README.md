@@ -1,7 +1,7 @@
 # ROR-BOOK
 
 Final project for Ruby on Rails curriculum of *The Odin Project*.
-[check it here](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
+[check it here](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project) Check it if you want to see what I have to do and the criteria for this to work.
 
 
 ## Steps, Bugs & Problems...
@@ -35,6 +35,10 @@ This was created to save the demographics of each user, an user only has a profi
  It has: FullName, City, Area, Age, School, and favorite dessert, even space for a picture link (so I may use gravatar later).
 
 ## 4. Post model.
+
+`rails generate model Post user:references title:string body:text`
+
+Thats all, everything else can be checked in the code.
 
 ## 5. comments as polymorphic
 
@@ -74,10 +78,103 @@ I did some more of google researchs for this matter because I find it alot more 
 
 Good enough for my to try it, because it was really simple and thats what I like about it. So reset my commits to the place before the friendship part done, and keep the pushed one on github in case I screw things up. So just a fetch and everything was just fine.
 
-The only thing that I did update was my README. Im not going to loose all this nonsense that I wrote.
+Also, this is getting pushed to another branch called 
+    `friendships_simple`
+That way Im not loosing anything that I would like to save.
 
 
+The main idea of this is just to create the friendship with a 'pending' status, a method on the model that update the status to accepted with a button or to destroy it with another button. To be shown on the notifications button of the nav bar.
 
+## 7.5 Creating a table for the likes...
+This was not on the plan, but to avoid an user duplicating his likes, this is the way. Even if this makes me write more code.
+
+## 8. Building now the views
+
+Im going to use turbo frames for this. I want to make an hybrid with this ror book, even if I havent done the deployment.
+
+So, this is the link: [turbo.frames tutorial](https://www.hotrails.dev/turbo-rails/turbo-frames-and-turbo-streams) it also have the turbostreams part.
+
+Also, this goes with the construction of the controllers, cause the views work with the controllers. So the idea is to go together with them, at least parallel writing.
+
+
+## 9. Arranging Scopes and debugging comments
+
+Scopes (kind of method class) help to keep the code DRY and organized. Thats all.
+
+Comments its giving me a hardtime I do not know why yet, maybe Im just proceeding the wrong way.
+
+Yes, I was not building them as I should do with the associations methods.
+
+## 10. Friendships bugs...
+The way that I did the 'show friends', and profiles and comments and all of that makes a big mess... because it shows current_user and not the user that should be shown... debugging that now.
+
+I did it with the same users#show, that way I find the posts directly on that controller.
+
+Also for posts#index I did a concatenation of two arrays with different scopes so I may be able to put them all together (mine and other peoples posts).
+
+## 11. Omniauth
+
+This was truly straight forward just some problems with the configuration on google. It takes time for the adjust to be valid, so if you have a bug, it may be that the platform of google is not working.
+
+After installing omniauth gem for google, I had to add the csrf secutiry gem of omniauth too. And later this snipped of code to devise.rb:
+___
+
+`OmniAuth.config.logger = Rails.logger if Rails.env.development?`
+___
+I find a 401 invalid_client and it was that my `ENV["GOOGLE_CLIENT_ID"]` was not passing because it did not have the correct sintaxis on initializers/devise.rb (double quotes needed).
+
+Later I had to put on google the autorized redirect url, the /onmiauth/callback or something like that.
+
+There is a method defined on the model. Remember this, future self.
+___
+         def self.from_omniauth(access_token)
+          data = access_token.info
+          user = User.where(email: data['email']).first
+      
+          # Uncomment the section below if you want users to be created if they don't exist
+           unless user
+               user = User.create(name: data['name'],
+                  email: data['email'],
+                  password: Devise.friendly_token[0,20]
+               )
+           end
+          user
+      end
+___
+
+when I was going to give up for the day, it just worked... so Im happy now.
+
+## 12. Mailers
+
+Sending a email after the sing up is possible while using devise. The problem is that devise creates the user for you, and you do not have access to those controllers, you can ask for those and all of that... but also without touching devise controllers you can do this:
+
+1. Create the user_mailer.rb (rails generate mailer User).
+2. define default and the method on user_mailer.
+3. As application controller rules everything... create the method that send the UserMailer#welcome_email
+___
+        def send_welcome_email
+
+        UserMailer.with(user: @user).welcome_mail.deliver_now
+        
+        end
+___
+4. add the next sniped to devise `"users/registrations_controller.rb"`:
+___
+        after_action :send_welcome_email, if: -> {@user.persisted?}
+___
+
+## 13. I created a messages page.
+
+I did not wanted to do the likes, just because its tedious. So I did a nice messages kind of part for this ror book.
+
+It has two parts: Rooms (to put the conversations in) and messages. A room can have many messages from the users inside, right now there are for two people only and you cannot invite anyone else. Later that will improve.
+=======
+
+I had the option of using mailboxer but I wanted to try and add the turbo_stream part for this idea.
+
+Also I put the navbar in the layout and create another layout for devise controllers.
+
+##  Installing Bootstrap/Bulma
 
 ---
 P.D: I do love markdown to write any kind of text.

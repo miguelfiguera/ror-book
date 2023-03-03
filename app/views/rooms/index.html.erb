@@ -1,0 +1,6 @@
+
+<%if !@rooms.empty?%>
+<%= render 'indexpartial'%>
+<%else%>
+<h1><%="You have #{@rooms.length} conversations"%></h1>
+<%end%>

@@ -1,0 +1,9 @@
+
+
+<h4>People you should know? Or you may like to know:</h4>
+
+<% if @not_friends.nil? && !@users.nil?%>
+<%=render 'index2', users:@users%>
+<%else%>
+<%= render 'index', not_friends: @not_friends%>
+<%end%>

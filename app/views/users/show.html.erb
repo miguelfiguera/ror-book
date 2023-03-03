@@ -1,0 +1,26 @@
+
+<h1><%=@user.username%> Profile.</h1>
+
+
+
+<%= render 'profiletools' %>
+
+
+<%= turbo_frame_tag 'create_profile' do %>
+<%end%>
+
+<%= turbo_frame_tag 'create_post' do %>
+<%end%>
+
+<%= turbo_frame_tag 'show_profile' do %>
+<%end%>
+
+<%= turbo_frame_tag 'show_friends' do %>
+<%end%>
+
+<%= turbo_frame_tag 'notifications' do %>
+<%end%>
+
+<h3>User wall:</h3>
+
+<%=render 'userposts'%>

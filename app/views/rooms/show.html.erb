@@ -1,0 +1,9 @@
+<p>Messages between: <%=User.find(@room.user_id).username%> & <%=User.find(@room.receiver_id).username%></p>
+
+
+<div id="update_messages">
+<%=render 'message', messages: @messages%>
+</div>
+<%= render 'messages/send_message', room: @room%>
+
+

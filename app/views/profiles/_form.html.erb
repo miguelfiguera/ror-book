@@ -1,0 +1,16 @@
+<%=form_with model: @profile do |f|%>
+<%=f.label :full_name, 'Full Name'%> <br>
+<%=f.text_field :full_name%><br>
+<%=f.hidden_field :user_id, value: current_user.id%> <br>
+<%=f.label :city, "city"%><br>
+<%=f.text_field :city%> <br>
+<%=f.label :age, 'How old are you?'%><br>
+<%=f.number_field :age%> <br>
+<%=f.label :school, 'Where did you study?'%><br>
+<%=f.text_field :school%> <br>
+<%=f.label :favorite_dessert, 'Favorite dessert?'%><br>
+<%=f.text_field :favorite_dessert%> <br>
+<%=f.label :profile_picture_link, "Add from gravatar the link of your picture!"%><br>
+<%=f.text_field :profile_picture_link%> <br>
+<%=f.submit 'Save Profile'%> <br>
+<%end%>

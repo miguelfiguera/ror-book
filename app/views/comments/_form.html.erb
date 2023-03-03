@@ -1,0 +1,7 @@
+<%=form_with model: @comment, locals: true do |c|%>
+<%=c.hidden_field :commentable_type, value: post.class%>
+<%=c.hidden_field :commentable_id, value: post.id%>
+<%=c.hidden_field :user_id, value: current_user.id%>
+<%=c.text_field :body%>
+<%=c.submit 'Send comment'%>
+<%end%>

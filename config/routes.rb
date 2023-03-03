@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
   get 'posts/index'
-  devise_for :users, :controllers => { registrations: 'users/registrations' }
+  devise_for :users, :controllers => { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
    root "posts#index"
-  
-  resources :user
-  resources :posts
-  resources :comments, only:[:create,:show,:edit,:update]
-  resources :profiles, only:[:create,:show,:edit,:update]
 
+    resources :rooms do
+      resources :messages
+    end
+
+  resources :users, only: [:index,:show] do
+    get 'friends'
+  end
+  
+  resources :posts, :comments, :profiles
+  resources :friendships
 end

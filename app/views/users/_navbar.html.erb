@@ -1,0 +1,6 @@
+<div>
+<button class="time-line"><%=link_to 'RorBook-timeLine', root_path%></button>
+<button class="user-search"><%=link_to 'Users Index', users_path%></button>
+<button class="user_profile"><%=link_to "#{current_user.username} Profile", user_path(current_user)%></button>
+<button><%=link_to "My Messages", rooms_path%></button>
+</div>

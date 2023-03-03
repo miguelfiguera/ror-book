@@ -1,0 +1,18 @@
+<h4><%='There are no pending requests' if @pending.empty?%></h4>
+
+<%unless @pending.empty?%>
+<%@pending.each do |fp|%>
+<h3><strong>Friend request by:</strong></h3>
+<%@user=User.find(fp.user_id)%>
+<%=@user.username%>
+<%=@user.profile.full_name%>
+<%#form to update friendship%>
+<%=form_with model:fp do |f|%>
+<%=f.hidden_field :status, value:'accepted'%>
+<%=f.submit 'Accept'%>
+<%end%>
+
+<%#button to destroy friendship%>
+<%=button_to 'Reject', friendship_path(fp),data: {turbo_method: :delete,turbo_confirm: 'Are you sure?'}%>
+<%end%>
+<%end%>
