@@ -2,14 +2,16 @@
 <%if @user.profile.nil?%>
 <button><%= link_to 'Create Profile',new_profile_path, data:{turbo_frame: 'create_profile'}%></button>
 <%else%>
-<button><%= link_to 'Show Profile',profile_path, data:{turbo_frame: 'show_profile'}%></button>
+<button><%= link_to 'Show info',profile_path, data:{turbo_frame: 'show_profile'}%></button>
 <%end%>
 
 <button><%= link_to 'show_friends', user_friends_url(@user.id), data:{turbo_frame: 'show_friends'}%></button>
+<%unless @user.id==current_user.id%>
+<%=render 'send_messages', x: @user%>
+<%end%>
 <%if current_user.id == @user.id%>
 <button><%= link_to 'Notifications', friendships_url, data:{turbo_frame: 'notifications'}%></button>
 <button><%= link_to 'Write on Your wall!', new_post_path, data:{turbo_frame: 'create_post'}%></button>
-<button><%= link_to 'Messages', data:{turbo_frame: 'messages'}%></button>
 <%end%>
 </div>
 

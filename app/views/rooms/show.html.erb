@@ -1,0 +1,9 @@
+<p>Messages between: <%=User.find(@room.user_id).username%> & <%=User.find(@room.receiver_id).username%></p>
+
+<%=render 'messages/message', messages: @messages%>
+
+<%= render 'messages/send_message', room: @room%>
+
+<%@messages.each do |f|%>
+<%=User.find(f.user_id.to_i)%>
+<%end%>

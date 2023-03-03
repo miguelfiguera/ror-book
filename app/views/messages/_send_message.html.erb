@@ -1,0 +1,9 @@
+<%receiver= current_user.id==room.user_id ? room.receiver_id : room.user_id%>
+<h3><%="Send a Message"%></h3>
+<%=form_with model: [@room,@message] do |f|%>
+<%=f.hidden_field :user_id,value: current_user.id%>
+<%=f.hidden_field :receiver_id, value:receiver%>
+<%=f.hidden_field :room_id, value: room.id%>
+<%=f.text_field :body%>
+<%=f.submit "Send"%>
+<%end%>

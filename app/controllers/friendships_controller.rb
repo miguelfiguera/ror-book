@@ -1,5 +1,4 @@
 class FriendshipsController < ApplicationController
- before_action :set_user
     def index
         @pending=Friendship.pending(current_user)
     end
@@ -49,8 +48,4 @@ class FriendshipsController < ApplicationController
     params.require(:friendship).permit(:user_id,:friend_id,:status)
    end
 
-    def set_user
-        @user=User.find(params[:id])
-    end
-    
 end

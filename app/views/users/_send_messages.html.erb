@@ -1,0 +1,5 @@
+    <%=form_with model: @room, locals:true do |f|%>
+    <%=f.hidden_field :user_id, value: current_user.id%>
+    <%=f.hidden_field :receiver_id, value: x.id%>
+    <%=f.submit 'send message'%>
+    <%end%>

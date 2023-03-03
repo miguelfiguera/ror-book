@@ -10,12 +10,22 @@
        <%if !@mapped.include?(x.id)%>
     <%=render 'friendrequest', x: x%>
     <%else%>
+    <%=render 'send_messages', x: x%>
     <h4><%='you are friends already'%></h4>
     <%end%>
     <%else%>
     <h3><strong><%='User without profile info:'%></strong></h3>
     <%=x.username%>
-    <%=x.email%>
+    <%=x.email%> <br>
+        <button><%=link_to "#{x.username}'s profile", x%></button>
+
+        <%if !@mapped.include?(x.id)%>
+    <%=render 'friendrequest', x: x%>
+    <%else%>
+        <%=render 'send_messages', x: x%>
+
+    <h4><%='you are friends already'%></h4>
+    <%end%>
         <%end%>
 
 </div>

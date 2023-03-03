@@ -1,0 +1,6 @@
+<%messages.each do |message|%>
+<%sender=User.where(id:message.user_id)%>
+<p>
+<%=sender%> <%=message.body%> 
+</p>
+<%end%>

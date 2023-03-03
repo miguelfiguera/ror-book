@@ -6,6 +6,7 @@ class UsersController < ApplicationController
         @comment=current_user.comments.create
         @posts=@user.posts.includes(:comments)
         @pending=Friendship.pending(@user)
+        @room=current_user.rooms.create
     end
 
     def index
@@ -15,6 +16,9 @@ class UsersController < ApplicationController
         @mapped=@friendships.map{|x| x.user_id==current_user.id ? x.friend_id : x.user_id}
 
         @not_friends= @users - @friendships unless @users_id.nil? || @friends.nil?
+
+        #creating the message from the index
+        @room=current_user.rooms.create
 
         # Creating a Friendship Request
 
