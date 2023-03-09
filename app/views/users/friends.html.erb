@@ -1,4 +1,5 @@
 <%=turbo_frame_tag "show_friends" do%>
+<button><%= link_to "Close Friends", user_path(current_user), class: "btn btn--light" %></button>
 <%=render 'user_friends'%>
 <%end%>
 

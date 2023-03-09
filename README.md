@@ -178,3 +178,6 @@ Also I put the navbar in the layout and create another layout for devise control
 
 ---
 P.D: I do love markdown to write any kind of text.
+
+
+P.D: Using turbo_frames: "_top" you may break out from the frame so the links work as expected. Fix that.

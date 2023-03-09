@@ -4,5 +4,6 @@
 <%=f.label :body, 'Write your post here:'%><br>
 <%=f.text_field :body%><br>
 <%=f.hidden_field :user_id, value: current_user.id%><br>
+<%= link_to "Cancel", user_path(current_user), class: "btn btn--light" %>
 <%=f.submit 'Save Post!'%>
 <%end%>

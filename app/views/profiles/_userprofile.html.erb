@@ -13,6 +13,7 @@
 </div>
 <button><%=link_to "Edit Profile", edit_profile_path, data:{turbo_frame:'edit_profile'}%></button>
 <%end%>
+<%= link_to "Close Profile", user_path(current_user), class: "btn btn--light" %>
 
 <%= turbo_frame_tag 'edit_profile' do %>
 <%end%>
