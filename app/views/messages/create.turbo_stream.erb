@@ -1,5 +1,1 @@
-#this does not work yet
-
-<%=turbo_stream.append "update_messages" do%>
-  <%= render partial: 'rooms/message', formats: [:html] %>
-<% end %>
+<%=turbo_stream.append "lol", partial: "messages/message", locals:{message: @message}%>

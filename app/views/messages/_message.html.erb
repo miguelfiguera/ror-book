@@ -1,0 +1,7 @@
+
+<%if !message.sender_name.nil?%>
+<strong><%=message.sender_name+":"%></strong> <%=message.body%> <br>
+<%else%>
+<%="#{message.user_id}:"%> <%=message.body%> <br>
+<%end%>
+

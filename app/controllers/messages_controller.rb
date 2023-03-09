@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 before_action :set_room, only: %i[ new create ]
     def index
-        @room=Room.find(params[:id])
+        @room=Room.find(params[:room_id])
         @messages= Message.room_messages(@room)
     end
     def new
@@ -17,8 +17,8 @@ before_action :set_room, only: %i[ new create ]
 
         respond_to do |format|
             if @message.save
-            #format.turbo_stream this does not work yet...
             format.html{redirect_to @room} 
+            format.turbo_stream
             end
         end
     end

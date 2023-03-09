@@ -1,7 +1,0 @@
-<%@messages.each do |msg|%>
-<%if !msg.sender_name.nil?%>
-<strong><%=msg.sender_name+":"%></strong> <%=msg.body%> <br>
-<%else%>
-<%="#{msg.user_id}:"%> <%=msg.body%> <br>
-<%end%>
-<%end%>
