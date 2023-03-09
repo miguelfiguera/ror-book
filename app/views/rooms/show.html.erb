@@ -1,5 +1,6 @@
 <p>Messages between: <%=User.find(@room.user_id).username%> & <%=User.find(@room.receiver_id).username%></p>
 
+<%=turbo_stream_from 'lol'%>
 
 <%=turbo_frame_tag 'lol',loading: 'lazy' do%>
 <%=render @messages%>
