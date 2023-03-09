@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
 before_action :set_room, only: %i[ new create ]
     def index
         @room=Room.find(params[:room_id])
-        @messages= Message.room_messages(@room).limit(20)
+        @messages= Message.room_messages(@room)
     end
     def new
         @message=Message.new
