@@ -200,6 +200,10 @@ this are the turbo events for stimulus controllers part check them if you need y
 
 This video [here](https://www.youtube.com/watch?v=QJ4BcTQlKC0) about how to deploy on render.com
 
+Render asked for a credit card(even for free plan), I do not have one that they can accept (Venezuelan here), so deployment was not possible this time.
+
+I'll try later another option, with real apps.
+
 ##  Installing Bootstrap/Bulma
 
 This project does not require any kind of styling, so This did not happen.
