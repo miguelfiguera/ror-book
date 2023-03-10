@@ -174,10 +174,47 @@ I had the option of using mailboxer but I wanted to try and add the turbo_stream
 
 Also I put the navbar in the layout and create another layout for devise controllers.
 
+## 14. Turbo frames cancel
+
+I have a turbo_frame_tag with id X1 and it is empty, when turbo frames replace it with another X1 but with content I can put a link inside the content to call the empty X1, and it will replace the X1 with content giving the sensation of closing the frame.
+
+So it is possible without using stimulus yet.
+
+[Learned this one here on hotrails.dev](https://www.hotrails.dev/turbo-rails/turbo-frames-and-turbo-streams)
+
+## 15. turbo streams + actionCable for live updates on messages:
+
+This was also learned [here in hotrails.dev](https://www.hotrails.dev/turbo-rails/turbo-streams).
+
+Also a lot of resources from [The Odin Project lesson on Turbo](https://www.theodinproject.com/lessons/ruby-on-rails-turbo#turbo-stream)
+
+## 16. reseting a form with stimulus
+
+got it from this [youtube video](https://www.youtube.com/watch?v=kNqPKN5vHC4) of Deanin. really good example.
+
+Look carefully how he writes form-reset and not form_reset.
+
+this are the turbo events for stimulus controllers part check them if you need your controller [to be triggered in an specific point](https://turbo.hotwired.dev/reference/events)
+
+## 17. Deploy
+
+This video [here](https://www.youtube.com/watch?v=QJ4BcTQlKC0) about how to deploy on render.com
+
 ##  Installing Bootstrap/Bulma
 
+This project does not require any kind of styling, so This did not happen.
+
+## P.D:
+
+I didn't do the likes part... because I did not want to, instead I focus on the chat part, because for me it was a good way of practicing and understanding all the other parts of turbo.
+
 ---
-P.D: I do love markdown to write any kind of text.
+P.P.D: I do love markdown to write any kind of text.
 
 
-P.D: Using turbo_frames: "_top" you may break out from the frame so the links work as expected. Fix that.
+P.P.P.D: Using turbo_frames: "_top" you may break out from the frame so the links work as expected. Fix that.
+
+
+## Hope you liked my work.
+
+# Miguel Q.
